@@ -1,0 +1,25 @@
+void population() {
+  faceX = width/2;
+faceY = height/2;
+faceDiameter = height;
+leftEyeX = width *5/16;
+leftEyeY = height /4;
+leftEyeDiameter = height/10;
+rightEyeX = width*11/16;
+rightEyeY = leftEyeY;
+rightEyeDiameter = leftEyeDiameter;
+noseX1 = width/2;
+noseX2 = width*7/16;
+noseX3 = width*10/18;
+noseY1 = height*2/6;
+noseY2 = height*5/10;
+noseY3 = noseY2;
+mouthX1 = noseX1;
+mouthX2 = noseX2;
+mouthY1 = height*2/6;
+mouthY2 = height*6/16;
+measlesX1 = random(width);
+measlesY1 = random(height);
+measlesDiameter = random(height*1/20, height*1/10);
+reset = 1;
+}//End Population;
