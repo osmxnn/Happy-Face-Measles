@@ -1,45 +1,59 @@
 //Global Variables
-int faceX, faceY;
-int faceDiameter;
+int reset;
+int faceX, faceY, faceDiameter;
 int leftEyeX, leftEyeY, leftEyeDiameter;
 int rightEyeX, rightEyeY, rightEyeDiameter;
 int noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
-int mouthX1, mouthY1, mouthX2, mouthY2;
-float measlesX1, measlesY1, measlesDiameter;
-color measlesColor = #FF0808; 
-int reset;
+float mouthX1, mouthY1, mouthX2, mouthY2, mouthThick;
+color red = #FF0303;
+color measlesColor = red;
+color white = 255;
+color colorReset = white;
+float measlesX, measlesY, measlesDiameter;
 
 void setup() {
-size (650, 600);
-//fullScreen();
-println("Screen Width is", displayWidth, "Screen Height is", displayHeight);
-//
-population();
-//
-ellipse(faceX, faceY, faceDiameter, faceDiameter);
-ellipse(leftEyeX, leftEyeY, leftEyeDiameter, leftEyeDiameter);
-ellipse(rightEyeX, rightEyeY, rightEyeDiameter, rightEyeDiameter);
-triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
- arc(325, 400, 150, 150, -PI+PI, PIE);  
- 
+  size (700, 600);
+  //fullScreen();
+  println("Screen Width is", displayWidth, "Screen Height is", displayHeight);
+  //
+  population();
+  //
+  //faceDraw();
+  background(0);
+  ellipse(faceX, faceY, faceDiameter, faceDiameter);
 }//End setup
 
 void draw() {
-  measlesX1 = random(width);
-measlesY1 = random(height);
-measlesDiameter = random(height*1/20, height*1/10);
- fill(measlesColor);
- ellipse(measlesX1, measlesY1, measlesDiameter, measlesDiameter);
- ellipse(measlesX1, measlesY1, measlesDiameter, measlesDiameter);
- ellipse(measlesX1, measlesY1, measlesDiameter, measlesDiameter);
- ellipse(measlesX1, measlesY1, measlesDiameter, measlesDiameter);
- ellipse(measlesX1, measlesY1, measlesDiameter, measlesDiameter);
- fill(reset);
+   
+  measlesX = random(width*1/2-height*1/2, width*1/2+height*1/2);
+  measlesY = random(height);
+  measlesDiameter = random(height*1/70, height*1/40);
+  fill(measlesColor);
+  //Parameters are randomly set ;)
+  ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
+  fill(#EAEAEA);
+  //triangle(1, 300, 1, 900, 1, 1);
+  fill(#12CAFF);
+  triangle(1, 450, 1, 1, 300, 1);
+  fill(colorReset);
+ // triangle(200, 480, 1, 900, 1, 1);
+ // triangle(200, 480, 1, 900, 1, 1);
+  fill(colorReset);
+  ellipse(leftEyeX, leftEyeY, leftEyeDiameter, leftEyeDiameter);
+  ellipse(rightEyeX, rightEyeY, rightEyeDiameter, rightEyeDiameter);
+  triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
+  strokeWeight(mouthThick);
+  line(mouthX1, mouthY1, mouthX2, mouthY2);
+  strokeWeight(reset);
+  
 }//End draw
 
 void keyPressed() {
-//Quit Keyboard Button
-if(key == 'q' || key == 'Q') { exit();}//End IF
-}//End keyPressed
+  //Quit Keyboard Button
+  if (key == 'q' || key == 'Q') { 
+    exit();
+  }//End IF
+}//End keypressed
 
-void mousePressed() {}//End mousePressed
+void mousePressed() {
+}//End mousePressed
