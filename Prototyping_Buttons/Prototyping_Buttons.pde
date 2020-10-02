@@ -1,6 +1,6 @@
 //Global Variables
 int buttonX, buttonY, buttonWidth, buttonHeight;
-color buttonColor, yellow, purple;
+color buttonColour, yellow, purple;
 
 void setup() {
   size(400, 300);
@@ -8,7 +8,7 @@ void setup() {
   buttonX = width*1/4;
   buttonY = height*1/4;
   buttonWidth = width*1/2;
-  buttonHeight = height*1/2;yellow = ;
+  buttonHeight = height*1/2; 
   purple = #F200FF;
   yellow = #FFE308;
 }//End setup
@@ -20,7 +20,7 @@ void draw() {
   } else {
     buttonColour = purple;
   }// End IF
-  //fill(); //Purple all the time, Yellow with Hoverover
+  fill(buttonColour); 
   rect(buttonX, buttonY, buttonWidth, buttonHeight);
 }//End draw
 

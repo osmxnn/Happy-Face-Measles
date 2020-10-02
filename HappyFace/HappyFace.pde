@@ -10,6 +10,9 @@ color measlesColor = red;
 color white = 255;
 color colorReset = white;
 float measlesX, measlesY, measlesDiameter;
+int buttonX, buttonY, buttonWidth, buttonHeight;
+color buttonColour, yellow, purple;
+color blue = #1CECFC;
 
 void setup() {
   size (700, 600);
@@ -31,10 +34,10 @@ void draw() {
   fill(measlesColor);
   //Parameters are randomly set ;)
   ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
-  fill(#EAEAEA);
+//  fill(#EAEAEA);
   //triangle(1, 300, 1, 900, 1, 1);
-  fill(#12CAFF);
-  triangle(1, 450, 1, 1, 300, 1);
+ // fill(#12CAFF);
+  //triangle(1, 450, 1, 1, 300, 1);
   fill(colorReset);
  // triangle(200, 480, 1, 900, 1, 1);
  // triangle(200, 480, 1, 900, 1, 1);
@@ -46,6 +49,21 @@ void draw() {
   line(mouthX1, mouthY1, mouthX2, mouthY2);
   strokeWeight(reset);
   
+ if (mouseX>buttonX && mouseX<width && mouseY>buttonHeight && mouseY<buttonWidth) { //Button Hoverover;
+    buttonColour = yellow; //Hoverover
+  } else {
+    buttonColour = purple;
+  }// End IF
+  String title = "X";
+PFont titleFont;
+titleFont = createFont ("Times New Roman Bold", 30);
+  fill(buttonColour); 
+  rect(buttonX, buttonY, buttonWidth, buttonHeight);
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textFont(titleFont, 20);
+text(title, width*23/32, height*0, width*1/2, height*2/10 );
+fill(colorReset);
 }//End draw
 
 void keyPressed() {
@@ -56,4 +74,6 @@ void keyPressed() {
 }//End keypressed
 
 void mousePressed() {
+   if (mouseX>buttonX && mouseX<width && mouseY>buttonHeight && mouseY<buttonWidth)
+    exit();
 }//End mousePressed
