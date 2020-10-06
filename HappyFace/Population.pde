@@ -26,6 +26,11 @@ void population() {
   buttonHeight = height*1/14; 
   purple = #F200FF;
   yellow = #FFE308;
-  
+  leftPupilX = width*3/8;
+  leftPupilY = height*1/4;
+  leftPupilDiameter = height/20;
+ rightPupilX = width*5/8;
+ rightPupilY =  height*1/4;
+  rightPupilDiameter =  height/20;
   
 }//End population

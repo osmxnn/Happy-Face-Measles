@@ -14,40 +14,39 @@ int buttonX, buttonY, buttonWidth, buttonHeight;
 color buttonColour, yellow, purple;
 color blue = #1CECFC;
 color green = #FFFFFF;
+int leftPupilX, leftPupilY, leftPupilDiameter;
+int rightPupilX, rightPupilY, rightPupilDiameter;
 
 
 void setup() {
+  population();
   size (700, 500);
   //fullScreen();
   println("Screen Width is", displayWidth, "Screen Height is", displayHeight);
-  //
-  population();
-  //
-  //faceDraw();
   background(0);
-  triangle(100, 250, 350, 00, 100, 00);
-
+  color(255);
   ellipse(faceX, faceY, faceDiameter, faceDiameter);
+  
+  
 }//End setup
 
 void draw() {
    
-  measlesX = random(width*1/2-height*1/2, width*1/2+height*1/2);
-  measlesY = random(height);
+  
+  int measlesX = int(random(width));
+  int measlesY = int(random(height));
   measlesDiameter = random(height*1/70, height*1/40);
   fill(measlesColor);
-  //Parameters are randomly set ;)
+  if( get(measlesX,measlesY) == color(255) ){
   ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
-fill(#EAEAEA);
-  
- // fill(#12CAFF);
-  //triangle(1, 450, 1, 1, 300, 1);
-  fill(colorReset);
- // triangle(200, 480, 1, 900, 1, 1);
- // triangle(200, 480, 1, 900, 1, 1);
+  }
   fill(colorReset);
   ellipse(leftEyeX, leftEyeY, leftEyeDiameter, leftEyeDiameter);
   ellipse(rightEyeX, rightEyeY, rightEyeDiameter, rightEyeDiameter);
+  fill(1);
+  ellipse(leftPupilX, leftPupilY, leftPupilDiameter, leftPupilDiameter);
+  ellipse(rightPupilX, rightPupilY, rightPupilDiameter, rightPupilDiameter);
+  fill(colorReset);
   triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
   strokeWeight(mouthThick);
   line(mouthX1, mouthY1, mouthX2, mouthY2);
